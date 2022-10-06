@@ -17,11 +17,20 @@ public class TextManager : Singleton<TextManager>
         textDic.Add(0, new string[] { "평화로운 어느 기숙사", "???: 아... 오늘 뭐먹지?" });
     }
 
+    private void Start()
+    {
+        GameManager.Instance.text.text = GetText(CurKey, CurIndex);
+    }
 
     public string GetText(int _key, int _index)
     {
         return textDic[_key][_index];
     }
 
+    public void ChangeText()
+    {
+        if (textDic[CurKey].Length - 1 > CurIndex)
+            GameManager.Instance.text.text = GetText(CurKey, ++CurIndex);
+    }
 
 }
