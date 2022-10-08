@@ -5,6 +5,7 @@ using UnityEngine;
 public class TextManager : Singleton<TextManager>
 {
     public Dictionary<int, string[]> textDic = new Dictionary<int, string[]>();
+    public Dictionary<int, string[]> playerTextDic = new Dictionary<int, string[]>();
 
     public int CurIndex { get; set; }
 
@@ -31,6 +32,11 @@ public class TextManager : Singleton<TextManager>
     {
         if (textDic[CurKey].Length - 1 > CurIndex)
             GameManager.Instance.text.text = GetText(CurKey, ++CurIndex);
+        else
+        {
+            GameManager.Instance.text.text = null;
+            GameManager.Instance.ShowButton();
+        }
     }
 
 }
