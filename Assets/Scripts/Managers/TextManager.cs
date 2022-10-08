@@ -5,7 +5,7 @@ using UnityEngine;
 public class TextManager : Singleton<TextManager>
 {
     public Dictionary<int, string[]> textDic = new Dictionary<int, string[]>();
-    public Dictionary<int, string[]> playerTextDic = new Dictionary<int, string[]>();
+    public Dictionary<int, GameObject[]>[] imageDic;
 
     public int CurIndex { get; set; }
 

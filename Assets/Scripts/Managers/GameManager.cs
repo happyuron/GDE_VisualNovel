@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
     public TextMeshProUGUI text;
 
-    public PlayerButton left, right;
+    public Button left, right;
 
 
     protected override void Awake()
